@@ -40,25 +40,25 @@ function Register() {
 
             navigate("/login");
 
-        } catch (error) {
-
-            console.log(error);
-
-            console.log(error.response);
-
-            console.log(error.response?.data);
-
-            toast.error(JSON.stringify(error.response?.data));
         }
+        catch (error) {
 
-        // catch (error) {
+            const errors = error.response?.data;
 
-        //     console.log(error.response?.data);
+            if (errors.username) {
+                toast.error(errors.username[0]);
+            }
+            else if (errors.email) {
+                toast.error(errors.email[0]);
+            }
+            else if (errors.password) {
+                toast.error(errors.password[0]);
+            }
+            else {
+                toast.error("Registration Failed");
+            }
 
-        //     toast.error("Registration Failed");
-
-
-        // }
+        }
 
     };
 

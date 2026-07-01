@@ -16,8 +16,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <App />
         <ToastContainer
             position="top-right"
-            autoClose={2000}
-            transition={Zoom}
+            autoClose={3000}
+            transition={Slide}
         />
     </BrowserRouter>
 );
