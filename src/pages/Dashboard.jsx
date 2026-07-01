@@ -16,7 +16,7 @@ function Dashboard() {
 
             try {
 
-                const response = await api.get("dashboard/");
+                const response = await api.get("/dashboard/");
 
                 setDashboard(response.data);
 

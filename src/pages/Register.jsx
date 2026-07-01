@@ -32,7 +32,7 @@ function Register() {
 
         try {
 
-            const response = await api.post("/api/register/", formData);
+            const response = await api.post("/register/", formData);
 
             console.log(response.data);
 
