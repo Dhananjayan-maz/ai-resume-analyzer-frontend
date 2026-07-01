@@ -32,7 +32,7 @@ function Register() {
 
         try {
 
-            const response = await api.post("register/", formData);
+            const response = await api.post("/api/register/", formData);
 
             console.log(response.data);
 
@@ -42,11 +42,23 @@ function Register() {
 
         } catch (error) {
 
+            console.log(error);
+
+            console.log(error.response);
+
             console.log(error.response?.data);
 
-            toast.error("Registration Failed");
-
+            toast.error(JSON.stringify(error.response?.data));
         }
+
+        // catch (error) {
+
+        //     console.log(error.response?.data);
+
+        //     toast.error("Registration Failed");
+
+
+        // }
 
     };
 

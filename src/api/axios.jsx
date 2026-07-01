@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://ai-resume-analyzer-backend-dii1.onrender.com",
+    baseURL: "https://ai-resume-analyzer-backend-dii1.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },
@@ -46,17 +46,14 @@ api.interceptors.response.use(
 
                 const refreshToken = localStorage.getItem("refresh_token");
 
-                const response = await axios.post(
-                    "http://127.0.0.1:8000/api/token/refresh/",
-                    {
-                        refresh: refreshToken,
-                    }
-                );
+                const response = await api.post("/api/token/refresh/", {
+                    refresh: refreshToken,
+                });
 
                 const newAccessToken = response.data.access;
 
                 localStorage.setItem("access_token", newAccessToken);
-                
+
                 console.log("New Access Token Generated");
 
                 originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;

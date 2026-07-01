@@ -33,7 +33,7 @@ function UploadResume() {
         try {
 
             const response = await api.post(
-                "resume/upload/",
+                "/api/resume/upload/",
                 formData,
                 {
                     headers: {
