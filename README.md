@@ -6,7 +6,7 @@ A modern and responsive React application that allows users to upload resumes, r
 
 **Frontend:** https://ai-resume-analyzer-frontend-vcpi.onrender.com
 
-**Backend API:** https://ai-resume-analyzer-backend-dii1.onrender.com
+**Backend API:** https://ai-resume-analyzer-backend-dii1.onrender.com/api/login/
 
 ---
 
